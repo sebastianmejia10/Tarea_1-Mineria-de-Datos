@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import sqlite3
+import numpy as np
 import pandas as pd 
 conexion = sqlite3.connect("datos_mision.db")
 
@@ -8,10 +9,8 @@ exoplanetas = pd.read_sql_query(consulta, conexion)
 conexion.close()
 
 radio = np.linspace(0,90,1000)
-densidad_tierra = 5.51
-masa_rocoso = (3/5.51)*(4*np.pi/3)*(radio**3)
-
-masa_gaseoso = (1/5.51)*(4*np.pi/3)*(radio**3)
+masa_rocoso = 3 * (radio**3) / 5.51
+masa_gaseoso = 1 * (radio**3) / 5.51
 
 plt.scatter(exoplanetas["Masa"], exoplanetas["Radio"],color='black', alpha=0.7)
 plt.plot(masa_rocoso, radio, linestyle="--", color="red", label = "Frontera planetas rocosos (ρ ≈ 3 g/cm³)")
