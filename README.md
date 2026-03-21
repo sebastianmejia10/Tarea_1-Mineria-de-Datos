@@ -1,4 +1,4 @@
-![Grafica de exoplanetas](resultado.png)
+![Grafica de exoplanetas](https://github.com/sebastianmejia10/Imagenes/blob/main/resultado.png)
 
 ## Interpretación de la gráfica Masa vs Radio
 
